@@ -1,0 +1,5 @@
+pluginclassname=BookedRoomsWebservice
+pluginname=BookedRoomsWebservice
+origin=data-quest
+version=1
+StudipMinVersion=2.3
