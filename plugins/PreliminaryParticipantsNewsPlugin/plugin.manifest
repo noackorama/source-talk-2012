@@ -1,0 +1,5 @@
+pluginclassname=PreliminaryParticipantsNewsPlugin
+pluginname=PreliminaryParticipantsNewsPlugin
+origin=data-quest
+version=4
+studipMinVersion=2.0
