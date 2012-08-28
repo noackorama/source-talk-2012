@@ -20,4 +20,4 @@ $st->bindValue(1, array('elmar','anoack','suchi'), StudipPDO::PARAM_ARRAY);
 $st->bindValue(2, 'Nachname', StudipPDO::PARAM_COLUMN);
 $st->bindValue(3, 5, StudipPDO::PARAM_INT);
 $st->execute();
-$data = $rs->fetchAll(PDO::FETCH_ASSOC);
+$data = $st->fetchAll(PDO::FETCH_ASSOC);
