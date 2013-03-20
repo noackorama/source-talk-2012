@@ -1,8 +1,10 @@
-class seminare extends SimpleORMap
-{
-}
-$s = new Seminare($id);
-echo $s->getValue('name');
-//ab 2.0
-echo $s->name;
-echo $s['name'];
+$course = new Course();
+$course->name = 'Neue Veranstaltung';
+$course->store();
+
+//alternativ
+$course->setData(array('name' => 'Neue Veranstaltung'));
+$course->store();
+
+//oder
+$course = Course::create(array('name' => 'Neue Veranstaltung'));
