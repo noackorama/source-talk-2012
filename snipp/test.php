@@ -1,10 +1,13 @@
-$course = new Course();
-$course->name = 'Neue Veranstaltung';
-$course->store();
+$id = 1;
+$course = new Course($id);
+if (!$course->isNew()) {
+    echo $course->name;
+} else {
+    //durch Aufruf über Konstruktor wird id gesetzt
+    //$course->id ist 1
+}
 
-//alternativ
-$course->setData(array('name' => 'Neue Veranstaltung'));
-$course->store();
-
-//oder
-$course = Course::create(array('name' => 'Neue Veranstaltung'));
+$course = Course::find($id);
+if (!is_null($course)) {
+    echo $course->name;
+}
