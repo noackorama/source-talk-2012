@@ -11,3 +11,8 @@ $course = Course::find($id);
 if (!is_null($course)) {
     echo $course->name;
 }
+
+if (!Course::exists($id)) {
+    $course = new Course($id);
+    $course->store
+}
