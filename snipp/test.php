@@ -1,9 +1,12 @@
-<?php
+$course = Course::find($id);
+$course->name = 'Testveranstaltung 2';
+$changed = $course->store();
 
-$courses = Course::findBySql('start_time = ? ORDER BY Name', array($semester_start));
+$data = array('name' => 'Testveranstaltung 2', 'nummer' => '12345');
+$course->setData($data);
 
-$courses = Course::findBystart_time($semester_start, 'ORDER BY Name');
+$data['members'][] = array('status' => 'dozent', 'id' => 5);
 
-$courses = Course::findMany($course_ids);
-
-$course_names = Course::findEachMany(function($s) {return array($s->name, $s->nummer);}, $course_ids);
+$course = Course::import($data);
+$course->store(); 
+//speichert neuen Kurs mit einem zugewiesenen Dozenten
