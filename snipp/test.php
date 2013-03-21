@@ -1,18 +1,9 @@
-$id = 1;
-$course = new Course($id);
-if (!$course->isNew()) {
-    echo $course->name;
-} else {
-    //durch Aufruf über Konstruktor wird id gesetzt
-    //$course->id ist 1
-}
+<?php
 
-$course = Course::find($id);
-if (!is_null($course)) {
-    echo $course->name;
-}
+$courses = Course::findBySql('start_time = ? ORDER BY Name', array($semester_start));
 
-if (!Course::exists($id)) {
-    $course = new Course($id);
-    $course->store
-}
+$courses = Course::findBystart_time($semester_start, 'ORDER BY Name');
+
+$courses = Course::findMany($course_ids);
+
+$course_names = Course::findEachMany(function($s) {return array($s->name, $s->nummer);}, $course_ids);
